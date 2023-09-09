@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FirstNav = styled.nav`
-  width: 400px;
+  width: 500px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -10,6 +10,6 @@ export const FirstNav = styled.nav`
   position: fixed;
   z-index: 2;
   top: 0;
-  left: 50px;
+  left: 100px;
   background-color: #0000;
 `;
