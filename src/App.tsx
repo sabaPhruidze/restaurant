@@ -1,5 +1,4 @@
 import { ThemeProvider } from "styled-components";
-
 import Header from "./components/pieces/Header";
 import { Global } from "./components/style/Global";
 import { FirstPart } from "./components/style/FirstPart";
@@ -24,18 +23,47 @@ const theme: Theme = {
   grey: "#f2f2f2",
 };
 function App() {
+  const navAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        ease: "easeInOut",
+        delayChildren: 1,
+      },
+    },
+  };
+  const navItem = {
+    hidden: {
+      opacity: 0,
+      y: "-50px",
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: "easeInOut",
+      },
+    },
+  };
+  const TEXTDATA: string[] = ["Menu", "Home", "Contact"];
   return (
     <div style={{ position: "relative", zIndex: 0 }}>
       <ThemeProvider theme={theme}>
         <Header />
         <Global />
-        <FirstNav>
-          <FirstNavText href="#">Menu</FirstNavText>
-          <FirstNavText href="#">Home</FirstNavText>
-          <FirstNavText href="#">Contact</FirstNavText>
+        <FirstNav variants={navAnimation} initial="hidden" animate="show">
+          {TEXTDATA.map((data, idx) => (
+            <FirstNavText variants={navItem} href="#" key={idx}>
+              {data}
+            </FirstNavText>
+          ))}
         </FirstNav>
         <FirstPart>
-          <FirstBar src={BAR} alt="bar" />
+          {/* <FirstBar src={BAR} alt="bar" /> */}
           <FirstH1 style={{ top: "calc(100% / 3 - 80px)" }}>Yummy.</FirstH1>
           <FirstH1 style={{ top: "calc(100% / 3)" }}>Fast.</FirstH1>
           <FirstH1 style={{ top: "calc(100% / 3 + 80px)" }}>Avaliable.</FirstH1>
