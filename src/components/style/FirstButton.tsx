@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-export const FirstButton = styled.button`
+import { motion } from "framer-motion";
+export const FirstButton = styled(motion.button)`
   width: 220px;
   height: 70px;
   color: ${({ theme }) => theme.white};
@@ -14,4 +14,8 @@ export const FirstButton = styled.button`
   border-radius: 30px;
   font-weight: 900;
   font-size: 16px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;

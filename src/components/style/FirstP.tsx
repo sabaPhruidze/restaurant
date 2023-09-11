@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-export const FirstP = styled.p`
+import { motion } from "framer-motion";
+export const FirstP = styled(motion.p)`
   position: absolute;
   z-index: 2;
   font-size: 18px;

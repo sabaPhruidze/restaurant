@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "./components/pieces/Header";
 import { Global } from "./components/style/Global";
 import { FirstPart } from "./components/style/FirstPart";
@@ -73,6 +73,34 @@ function App() {
       x: 0,
     },
   };
+  const firstPAnimaiton = {
+    hidden: {
+      opacity: 0,
+      x: "-200px",
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 2.5,
+        duration: 1,
+      },
+    },
+  };
+  const firstBTNAnimaiton = {
+    hidden: {
+      opacity: 0,
+      scale: 0,
+    },
+    show: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 3.5,
+        duration: 1,
+      },
+    },
+  };
   const TEXTDATA: string[] = ["Menu", "Home", "Contact"];
   const H1DATA: string[] = ["Yummy.", "Fast.", "Avaliable."];
   return (
@@ -116,12 +144,28 @@ function App() {
               </FirstH1>
             );
           })}
-          <FirstP>
+          <FirstP initial="hidden" animate="show" variants={firstPAnimaiton}>
             Open for over 15 years, our restaurant near LAX has built a strong
             reputation on big taste and bold flavors, earning it ra​ves from
             locals and travelers alike.
           </FirstP>
-          <FirstButton>ORDER ONLINE</FirstButton>
+          <AnimatePresence>
+            <FirstButton
+              initial="hidden"
+              animate="show"
+              variants={firstBTNAnimaiton}
+              whileHover={{
+                scale: 1.1,
+                transition: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                },
+              }}
+            >
+              ORDER ONLINE
+            </FirstButton>
+          </AnimatePresence>
         </FirstPart>
       </ThemeProvider>
     </div>
