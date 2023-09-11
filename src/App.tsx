@@ -9,6 +9,9 @@ import { FirstNavText } from "./components/style/FirstNavText";
 import { FirstH1 } from "./components/style/FirstH1";
 import { FirstP } from "./components/style/FirstP";
 import { FirstButton } from "./components/style/FirstButton";
+import { SecondPart } from "./components/style/SecondPart";
+import { SecondH2 } from "./components/style/SecondH2";
+import { SecondP } from "./components/style/SecondP";
 
 import BAR from "./assets/Img/BARS.svg";
 
@@ -87,7 +90,7 @@ function App() {
       },
     },
   };
-  const firstBTNAnimaiton = {
+  const firstBTNAnimation = {
     hidden: {
       opacity: 0,
       scale: 0,
@@ -96,11 +99,14 @@ function App() {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 3.5,
         duration: 1,
       },
     },
+    hover: {
+      scale: 1.3,
+    },
   };
+
   const TEXTDATA: string[] = ["Menu", "Home", "Contact"];
   const H1DATA: string[] = ["Yummy.", "Fast.", "Avaliable."];
   return (
@@ -149,24 +155,66 @@ function App() {
             reputation on big taste and bold flavors, earning it ra​ves from
             locals and travelers alike.
           </FirstP>
-          <AnimatePresence>
-            <FirstButton
-              initial="hidden"
-              animate="show"
-              variants={firstBTNAnimaiton}
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 10,
-                },
-              }}
-            >
-              ORDER ONLINE
-            </FirstButton>
-          </AnimatePresence>
+          <FirstButton
+            initial="hidden"
+            animate="show"
+            variants={firstBTNAnimation}
+            whileHover={firstBTNAnimation.hover}
+          >
+            ORDER ONLINE
+          </FirstButton>
         </FirstPart>
+        <SecondPart>
+          <SecondH2
+            initial={{
+              x: "-400px",
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 1,
+                delay: 0.5,
+              },
+            }}
+            viewport={{ once: true }}
+          >
+            Modern approach to classic recipes
+          </SecondH2>
+          <SecondP
+            initial={{
+              x: "-400px",
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 1,
+                delay: 1.5,
+              },
+            }}
+            viewport={{ once: true }}
+          >
+            We welcome you to a delicious feast of exquisite dishes. With a wide
+            range of world cuisines to choose from, we guarantee you a sumptuous
+            feast experience in our restaurant! Here you will dive into a
+            friendly and romantic atmosphere and enjoy our haute cuisine. With
+            our great selection of dishes from all over the world you can feel
+            yourself as a traveler and true gourmet!
+          </SecondP>
+          <FirstButton
+            initial="hidden"
+            whileInView="show"
+            variants={firstBTNAnimation}
+            whileHover={firstBTNAnimation.hover}
+            style={{ position: "unset" }}
+            viewport={{ once: true }}
+          >
+            ORDER ONLINE
+          </FirstButton>
+        </SecondPart>
       </ThemeProvider>
     </div>
   );
