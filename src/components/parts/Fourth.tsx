@@ -11,7 +11,7 @@ interface Data {
   ingredient: string;
 }
 
-function Third() {
+function Fourth() {
   const DATA: Data[] = [
     {
       id: 1,
@@ -56,6 +56,18 @@ function Third() {
   return (
     <ContainerFlexRow>
       <FlexDiv>
+        <FlexImage
+          src={GARLIC}
+          alt="garlic"
+          initial={{ opacity: 0, x: "100%", y: "100%" }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          dragElastic={0.8}
+          drag
+          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+        />
+      </FlexDiv>
+      <FlexDiv>
         <motion.h1
           style={{ marginBottom: "50px", fontSize: 40, fontWeight: 100 }}
           initial={{
@@ -97,20 +109,8 @@ function Third() {
           );
         })}
       </FlexDiv>
-      <FlexDiv>
-        <FlexImage
-          src={GARLIC}
-          alt="garlic"
-          initial={{ opacity: 0, x: "100%", y: "100%" }}
-          whileInView={{ opacity: 1, x: 0, y: 0 }}
-          transition={{ delay: 5, duration: 1.5, ease: "easeOut" }}
-          dragElastic={0.8}
-          drag
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-        />
-      </FlexDiv>
     </ContainerFlexRow>
   );
 }
 
-export default Third;
+export default Fourth;

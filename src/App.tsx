@@ -11,6 +11,7 @@ import { FirstNavText } from "./components/style/FirstNavText";
 import First from "./components/parts/First";
 import Second from "./components/parts/Second";
 import Third from "./components/parts/Third";
+import Fourth from "./components/parts/Fourth";
 
 import BAR from "./assets/Img/BARS.svg";
 
@@ -70,6 +71,7 @@ function App() {
         <First />
         <Second />
         <Third />
+        <Fourth />
       </ThemeProvider>
     </motion.div>
   );
