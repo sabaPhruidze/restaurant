@@ -2,6 +2,7 @@ import { ContainerFlexRow } from "../style/ContainerFlexRow";
 import { FlexDiv } from "../style/FlexDiv";
 import { FlexImage } from "../style/FlexImage";
 import GARLIC from "../../assets/Img/GARLIC SHRIMP.png";
+import { motion } from "framer-motion";
 
 interface Data {
   id: number;
@@ -55,22 +56,59 @@ function Third() {
   return (
     <ContainerFlexRow>
       <FlexDiv>
-        <h1 style={{ marginBottom: "50px", fontSize: 40, fontWeight: 100 }}>
+        <motion.h1
+          style={{ marginBottom: "50px", fontSize: 40, fontWeight: 100 }}
+          initial={{
+            y: "-30px",
+            opacity: 0,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1,
+              delay: 0.5,
+            },
+          }}
+          viewport={{ once: true }}
+        >
           Main menu
-        </h1>
-        {DATA.map((data) => {
+        </motion.h1>
+        {DATA.map((data, index) => {
           return (
-            <div key={data.id} style={{ marginBottom: "20px" }}>
+            <motion.div
+              key={data.id}
+              style={{ marginBottom: "20px" }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                delay: index + 1,
+                duration: 0.5,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
+            >
               <h5 style={styles}>{data.name}</h5>
               <p style={styles}>$ {data.price}</p>
               <p style={{ display: "block", fontSize: "18px" }}>
                 {data.ingredient}
               </p>
-            </div>
+            </motion.div>
           );
         })}
       </FlexDiv>
-      <FlexImage src={GARLIC} alt="garlic" />
+      <FlexDiv>
+        <FlexImage
+          src={GARLIC}
+          alt="garlic"
+          initial={{ opacity: 0, x: "100%", y: "100%" }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ delay: 6, duration: 1.5, ease: "easeOut" }}
+          dragElastic={0.8}
+          drag
+          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+        />
+      </FlexDiv>
     </ContainerFlexRow>
   );
 }

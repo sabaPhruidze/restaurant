@@ -7,4 +7,5 @@ export const FlexDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  overflow: hidden;
 `;
