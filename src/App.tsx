@@ -1,7 +1,10 @@
 import { ThemeProvider } from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+
+import { motion } from "framer-motion";
+
 import Header from "./components/pieces/Header";
 import { Global } from "./components/style/Global";
+import ScrollProgress from "./components/pieces/ScrollProgress";
 import { FirstBar } from "./components/style/FirstBar";
 import { FirstNav } from "./components/style/FirstNav";
 import { FirstNavText } from "./components/style/FirstNavText";
@@ -51,9 +54,9 @@ function App() {
   };
 
   const TEXTDATA: string[] = ["Menu", "Home", "Contact"];
-
   return (
-    <div style={{ position: "relative", zIndex: 0 }}>
+    <motion.div style={{ position: "relative", zIndex: 0 }}>
+      <ScrollProgress />
       <ThemeProvider theme={theme}>
         <Header />
         <Global />
@@ -66,8 +69,9 @@ function App() {
         </FirstNav>
         <First />
         <Second />
+        <Third />
       </ThemeProvider>
-    </div>
+    </motion.div>
   );
 }
 
