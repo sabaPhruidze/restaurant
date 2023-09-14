@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
-import { firstBTNAnimation } from "../parts/First";
 import { SecondPart } from "../style/SecondPart";
 import { SecondH2 } from "../style/SecondH2";
 import { SecondP } from "../style/SecondP";
 import { FirstButton } from "../style/FirstButton";
+import { firstBTNAnimation } from "../parts/First";
 
 function Second() {
   return (

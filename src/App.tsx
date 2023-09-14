@@ -15,6 +15,7 @@ import Fourth from "./components/parts/Fourth";
 import Fifth from "./components/parts/Fifth";
 import Sixth from "./components/parts/Sixth";
 import Seventh from "./components/parts/Seventh";
+import Eighth from "./components/parts/Eighth";
 
 import BAR from "./assets/Img/BARS.svg";
 
@@ -78,6 +79,7 @@ function App() {
         <Fifth />
         <Sixth />
         <Seventh />
+        <Eighth />
       </ThemeProvider>
     </motion.div>
   );
