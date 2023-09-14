@@ -6,4 +6,8 @@ export const WhiteLineBox = styled(motion.div)`
   height: 254px;
   border: 8px solid ${({ theme }) => theme.white};
   background-color: #0000006d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 `;
