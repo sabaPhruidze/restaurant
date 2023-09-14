@@ -101,9 +101,10 @@ function Third() {
         <FlexImage
           src={GARLIC}
           alt="garlic"
-          initial={{ opacity: 0, x: "100%", y: "100%" }}
+          initial={{ opacity: 0, x: "300px", y: "300px" }}
           whileInView={{ opacity: 1, x: 0, y: 0 }}
           transition={{ delay: 5, duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
           dragElastic={0.8}
           drag
           dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}

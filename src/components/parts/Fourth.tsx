@@ -1,8 +1,9 @@
 import { ContainerFlexRow } from "../style/ContainerFlexRow";
 import { FlexDiv } from "../style/FlexDiv";
 import { FlexImage } from "../style/FlexImage";
-import GARLIC from "../../assets/Img/GARLIC SHRIMP.png";
+import CHICKENLIVERPARFAIT from "../../assets/Img/HICKEN LIVER PARFAIT.png";
 import { motion } from "framer-motion";
+import { FlexDivFourth } from "../style/FlexDivFourth";
 
 interface Data {
   id: number;
@@ -15,17 +16,17 @@ function Fourth() {
   const DATA: Data[] = [
     {
       id: 1,
-      name: "GARLIC SHRIMP & TONNARELLI PASTA",
-      price: "19.99",
+      name: "C HICKEN LIVER PARFAIT",
+      price: "23.80",
       ingredient:
-        "Serrano ham, spinach, roasted red peppers, tomato, pil pil sauce",
+        "Chicken, onion, vegetable oil, Sour cream sauce, pepper, salt",
     },
     {
       id: 2,
-      name: "GRILLED HANGER STEAK",
+      name: "ITALIAN TASTING PLATTER",
       price: "25.50",
       ingredient:
-        "Serrano ham, spinach, roasted red peppers, tomato, pil pil sauce",
+        "Three Italian Favorites: Baked Clams, Fried Calamari and Stuffed Shrimp",
     },
     {
       id: 3,
@@ -36,16 +37,15 @@ function Fourth() {
     },
     {
       id: 4,
-      name: "GRILLED FREE RANGE CHICKEN SALAD",
+      name: "CRAB CONGEE",
       price: "19.99",
-      ingredient:
-        "Mesclun greens, pepperjack cheese, bacon, avocado, corn, tomato, cucumbers",
+      ingredient: "Biscuits with fresh sausage patties & country gravy",
     },
     {
       id: 5,
-      name: "GRILLED BBQ BABY BACK RIBS",
+      name: "SALT AND PEPPER CALAMARI",
       price: "23.00",
-      ingredient: "Hibiscus sweet ranch coleslaw, hand cut fries ",
+      ingredient: "Rocket, lime, chipotle aioli ",
     },
   ];
   const styles = {
@@ -55,37 +55,20 @@ function Fourth() {
   };
   return (
     <ContainerFlexRow>
-      <FlexDiv>
+      <FlexDivFourth>
         <FlexImage
-          src={GARLIC}
-          alt="garlic"
-          initial={{ opacity: 0, x: "100%", y: "100%" }}
+          src={CHICKENLIVERPARFAIT}
+          alt="CHICKEN LIVER PARFAIT"
+          initial={{ opacity: 0, x: "-300px", y: "-300px" }}
           whileInView={{ opacity: 1, x: 0, y: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
           dragElastic={0.8}
           drag
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+          dragConstraints={{ left: 0, top: 40, right: 50, bottom: 40 }}
         />
-      </FlexDiv>
-      <FlexDiv>
-        <motion.h1
-          style={{ marginBottom: "50px", fontSize: 40, fontWeight: 100 }}
-          initial={{
-            y: "-30px",
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-            transition: {
-              duration: 1,
-              delay: 0.5,
-            },
-          }}
-          viewport={{ once: true }}
-        >
-          Main menu
-        </motion.h1>
+      </FlexDivFourth>
+      <FlexDivFourth>
         {DATA.map((data, index) => {
           return (
             <motion.div
@@ -94,7 +77,7 @@ function Fourth() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: index + 1,
+                delay: index + 2.5,
                 duration: 0.5,
                 ease: "easeOut",
               }}
@@ -108,7 +91,7 @@ function Fourth() {
             </motion.div>
           );
         })}
-      </FlexDiv>
+      </FlexDivFourth>
     </ContainerFlexRow>
   );
 }
