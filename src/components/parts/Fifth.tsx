@@ -37,13 +37,26 @@ function Fifth() {
       text: "Meat",
     },
   ];
+
   return (
-    <ContainerFlexRow style={{ height: 550, width: "100%" }}>
+    <ContainerFlexRow style={{ height: 750, width: "100%" }}>
       {DATA.map((data) => (
         <BGI
           img={data.img}
           style={{ marginRight: `${data.marginRight}` }}
           key={data.id}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          whileHover={{
+            scale: [1, 1.3, 1],
+            rotate: [0, 0, 360],
+            borderRadius: ["0%", "0%", "50%"],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          viewport={{ once: true }}
         >
           <WhiteLineBox>
             <FifthH2>{data.text}</FifthH2>
