@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+
 import { SecondH2 } from "./SecondH2";
 
 export const FifthH2 = styled(SecondH2)`

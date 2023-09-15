@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Header from "./components/pieces/Header";
 import { Global } from "./components/style/Global";
 import ScrollProgress from "./components/pieces/ScrollProgress";
-import { FirstBar } from "./components/style/FirstBar";
+
 import { FirstNav } from "./components/style/FirstNav";
 import { FirstNavText } from "./components/style/FirstNavText";
 import First from "./components/parts/First";
@@ -18,8 +18,6 @@ import Seventh from "./components/parts/Seventh";
 import Eighth from "./components/parts/Eighth";
 import Ninth from "./components/parts/Ninth";
 import Tenth from "./components/parts/Tenth";
-
-import BAR from "./assets/Img/BARS.svg";
 
 interface Theme {
   white: string;

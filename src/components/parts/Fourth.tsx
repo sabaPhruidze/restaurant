@@ -1,5 +1,4 @@
 import { ContainerFlexRow } from "../style/ContainerFlexRow";
-import { FlexDiv } from "../style/FlexDiv";
 import { FlexImage } from "../style/FlexImage";
 import CHICKENLIVERPARFAIT from "../../assets/Img/HICKEN LIVER PARFAIT.png";
 import { motion } from "framer-motion";

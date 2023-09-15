@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import { SecondPart } from "../style/SecondPart";
 import { SecondH2 } from "../style/SecondH2";
 import { SecondP } from "../style/SecondP";

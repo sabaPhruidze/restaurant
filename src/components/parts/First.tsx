@@ -64,7 +64,6 @@ function First() {
 
   return (
     <FirstPart>
-      {/* <FirstBar src={BAR} alt="bar" /> */}
       {H1DATA.map((word, idx) => {
         return (
           <FirstH1

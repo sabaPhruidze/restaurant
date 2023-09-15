@@ -1,5 +1,4 @@
 import { ContainerFlexRow } from "../style/ContainerFlexRow";
-import { FlexDiv } from "../style/FlexDiv";
 import { FlexImage } from "../style/FlexImage";
 import CORNISH_MACKEREL from "../../assets/Img/cornish-mackerel.png";
 import { motion } from "framer-motion";
