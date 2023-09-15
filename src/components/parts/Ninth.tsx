@@ -1,5 +1,6 @@
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
-
+import emailjs from "@emailjs/browser";
 import { SecondPart } from "../style/SecondPart";
 import { SecondH2 } from "../style/SecondH2";
 import { SecondP } from "../style/SecondP";
@@ -11,12 +12,30 @@ import { Input } from "../style/Input";
 import { TextArea } from "../style/TextArea";
 import { FirstButton } from "../style/FirstButton";
 // import { firstBTNAnimation } from "../parts/First";
-
+interface Data {
+  date: string;
+  message: string;
+  name: string;
+  phone: string;
+}
 function Ninth() {
-  const { register, handleSubmit } = useForm();
-
+  const { register, reset } = useForm();
+  const formRef = useRef<any>("");
   const onSubmit = (data: any) => {
-    console.log(data);
+    data.preventDefault();
+    emailjs
+      .sendForm(
+        "service_nglktv8",
+        "template_hkzr4jy",
+        formRef.current,
+        "Uq7zxKXdTMwbm8ZHu"
+      )
+      .then(
+        () => reset(),
+        (error) => {
+          console.log(error);
+        }
+      );
   };
   const firstBTNAnimation = {
     hidden: {
@@ -80,12 +99,12 @@ function Ninth() {
           With our great selection of dishes from all over the world you can
           feel yourself as a traveler and true gourmet!
         </SecondP>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form ref={formRef} onSubmit={(e: any) => onSubmit(e)}>
           <NinthFlexRow>
             <NinthFlexColumn>
               <Label htmlFor="phone">Phone</Label>
               <Input
-                {...register("phone")}
+                {...register("phone", { required: true })}
                 id="phone"
                 placeholder="Enter your phone (e.g +14155552675)"
               />
@@ -93,7 +112,7 @@ function Ninth() {
             <NinthFlexColumn>
               <Label htmlFor="name">Name</Label>
               <Input
-                {...register("name")}
+                {...register("name", { required: true })}
                 id="name"
                 placeholder="Enter your Name"
               />
@@ -102,16 +121,17 @@ function Ninth() {
           <NinthFlexColumn>
             <Label htmlFor="date">Date</Label>
             <Input
-              {...register("date")}
+              {...register("date", { required: true })}
               id="date"
-              style={{ width: "100%", marginBottom: 30 }}
+              style={{ width: "100%", marginBottom: 30, color: "#6e6e6e" }}
               placeholder="MM/DD/YYYY"
+              type="date"
             />
           </NinthFlexColumn>
           <NinthFlexColumn>
             <Label htmlFor="message">Message</Label>
             <TextArea
-              {...register("message")}
+              {...register("message", { required: true })}
               id="message"
               placeholder="Enter your message"
             />
