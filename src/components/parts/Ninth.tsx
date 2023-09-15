@@ -12,12 +12,7 @@ import { Input } from "../style/Input";
 import { TextArea } from "../style/TextArea";
 import { FirstButton } from "../style/FirstButton";
 // import { firstBTNAnimation } from "../parts/First";
-interface Data {
-  date: string;
-  message: string;
-  name: string;
-  phone: string;
-}
+
 function Ninth() {
   const { register, reset } = useForm();
   const formRef = useRef<any>("");
@@ -49,6 +44,7 @@ function Ninth() {
         type: "spring",
         damping: 10,
         stiffness: 500,
+        delay: 3,
       },
     },
     hover: {
@@ -99,7 +95,19 @@ function Ninth() {
           With our great selection of dishes from all over the world you can
           feel yourself as a traveler and true gourmet!
         </SecondP>
-        <Form ref={formRef} onSubmit={(e: any) => onSubmit(e)}>
+        <Form
+          ref={formRef}
+          onSubmit={(e: any) => onSubmit(e)}
+          initial={{ opacity: 0, x: "-30px" }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+              delay: 2,
+            },
+          }}
+        >
           <NinthFlexRow>
             <NinthFlexColumn>
               <Label htmlFor="phone">Phone</Label>
