@@ -1,7 +1,7 @@
 import { ContainerFlexRow } from "../style/ContainerFlexRow";
 import { FlexDiv } from "../style/FlexDiv";
 import { FlexImage } from "../style/FlexImage";
-import WESTERN_SUNRISE from "../../assets/img/western sunrise.png";
+import WESTERN_SUNRISE from "../../assets/Img/western sunrise.png";
 import { motion } from "framer-motion";
 
 interface Data {
