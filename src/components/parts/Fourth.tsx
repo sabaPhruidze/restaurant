@@ -1,6 +1,6 @@
 import { ContainerFlexRow } from "../style/ContainerFlexRow";
 import { FlexImage } from "../style/FlexImage";
-import CHICKENLIVERPARFAIT from "../../assets/Img/HICKEN LIVER PARFAIT.png";
+import CHICKENLIVERPARFAIT from "../../../public/optimized/HICKEN_LIVER_PARFAIT.webp";
 import { motion } from "framer-motion";
 import { FlexDivFourth } from "../style/FlexDivFourth";
 

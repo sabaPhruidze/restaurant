@@ -1,7 +1,7 @@
 import { ContainerFlexRow } from "../style/ContainerFlexRow";
 import { FlexDiv } from "../style/FlexDiv";
 import { FlexImage } from "../style/FlexImage";
-import GARLIC from "../../assets/Img/GARLIC SHRIMP.png";
+import GARLIC from "../../../public/optimized/GARLIC_SHRIMP.webp";
 import { motion } from "framer-motion";
 
 interface Data {

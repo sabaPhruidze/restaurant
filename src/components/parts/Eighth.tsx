@@ -5,13 +5,12 @@ import { GalleryWrap } from "../style/GalleryWrap";
 import { FlexImageGallery } from "../style/FlexImageGallery";
 import { FirstButton } from "../style/FirstButton";
 import { firstBTNAnimation } from "../parts/First";
-import gallery1 from "../../assets/Img/gallery1.jpeg";
-import gallery2 from "../../assets/Img/gallery2.jpeg";
-import gallery3 from "../../assets/Img/gallery3.jpeg";
-import gallery4 from "../../assets/Img/gallery4.jpeg";
-import gallery5 from "../../assets/Img/gallery5.jpeg";
-import gallery6 from "../../assets/Img/gallery6.jpeg";
-
+import gallery1 from "../../../public/optimized/gallery1.webp";
+import gallery2 from "../../../public/optimized/gallery2.webp";
+import gallery3 from "../../../public/optimized/gallery3.webp";
+import gallery4 from "../../../public/optimized/gallery4.webp";
+import gallery5 from "../../../public/optimized/gallery5.webp";
+import gallery6 from "../../../public/optimized/gallery6.webp";
 function Eighth() {
   const DATA = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6];
 

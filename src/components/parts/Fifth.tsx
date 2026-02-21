@@ -5,9 +5,9 @@ import { RoundSkyBall } from "../style/RoundSkyBall";
 import { FifthH2 } from "../style/FifthH2";
 import { Arrow } from "../style/Arrow";
 import RIGHTARROW from "../../assets/Img/RIGHTARROW.svg";
-import VEGANFOODS from "../../assets/Img/veganFoods.jpg";
-import SALADS from "../../assets/Img/salads.jpg";
-import MEAT from "../../assets/Img/Meat.jpg";
+import VEGANFOODS from "../../../public/optimized/veganFoods.webp";
+import SALADS from "../../../public/optimized/salads.webp";
+import MEAT from "../../../public/optimized/Meat.webp";
 
 interface Data {
   id: number;
