@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BG from "../../assets/Img/BG.jpg";
+import BG from "../../assets/Img/BG.webp";
 export const FirstPart = styled.div`
   width: 100vw;
   height: 100vh;
